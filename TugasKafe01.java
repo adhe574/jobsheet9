@@ -25,7 +25,7 @@ public class TugasKafe01 {
 
         System.out.println("\nDaftar pesanan : ");
         for (int i=0; i<jmlPesanan; i++) {
-            System.out.println((i+1) + " . " + namaPesanan + "Rp" + hargaPesanan);
+            System.out.println((namaPesanan[i]) + " -harga : " + hargaPesanan[i]);
         }
 
         System.out.println("Total Biaya : Rp " + totalBiaya);
