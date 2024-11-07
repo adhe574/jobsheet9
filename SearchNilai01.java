@@ -5,24 +5,30 @@ public class SearchNilai01 {
 
         Scanner sc01 = new Scanner(System.in);
         
-        int[] arrNilai = new int[6];
+        int[] arrNilai = new int[7];
         int key = 78;
-        int hasil = 0;
 
         System.out.print("Masukkan banyaknya nilai yang akan diinput : ");
-        int N = sc01.nextInt();
+        int jumlahElemen = sc01.nextInt();
 
-        for (int i=1; i<arrNilai.length; i++) {
-            System.out.print("Masukkan nilai mahasiswa ke-" + i + " : ");
+        for (int i=1; i<7; i++) {
+            System.out.print("Masukkan nilai mahasiswa ke-" + (i) + " : ");
             arrNilai[i] = sc01.nextInt();
-            if (key == arrNilai[i]) {
+        }
+        System.out.print("Masukkan nilai yang ingin dicari : ");
+        key = sc01.nextInt();
+
+        int hasil = -1;
+        for (int i=0; i<arrNilai.length; i++) {
+            if (arrNilai[i] == key) {
                 hasil = i;
                 break;
             }
         }
-        System.out.print("Masukkan nilai yang ingin dicari : ");
-        arrNilai[N] = sc01.nextInt();
-        System.out.println();
-        System.out.println("Nilai "+ hasil +" ketemu, merupakan nilai mahasiswa ke-" + hasil);
+        if (hasil !=-1) {
+            System.out.println("Nilai " + key + " ketemu, merupakan nilai mahasiswa ke- " + hasil);
+        } else {
+            System.out.println("Nilai yang dicari tidak ditemukan ");
+        }     
     }
 }
