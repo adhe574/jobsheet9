@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class MenuKafe01 {
+public class TugasMenuKafe01 {
     public static void main(String[] args) {
 
         Scanner sc01 = new Scanner(System.in);
