@@ -4,31 +4,41 @@ public class TugasNilai01 {
     public static void main(String[] args) {
         
         Scanner sc01 = new Scanner(System.in);
-
-        int[] nilaiMhs = new int[5];
         
-        System.out.print("Masukkan jumlah mahasiswa : ");
-        int jumlahMahasiswa = sc01.nextInt();
+        System.out.print("Masukkan banyaknya nilai mahasiswa : ");
+        int jumlahNilaiMahasiswa = sc01.nextInt();
 
-        for (int i=0; i<5; i++) {
+        int[] nilaiMhs = new int[jumlahNilaiMahasiswa];
+
+        for (int i=0; i<jumlahNilaiMahasiswa; i++) {
             System.out.print("Masukkan nilai mahasiswa ke-" + (i+1) + " : ");
-            nilaiMhs[i] = sc01.nextInt();                   
+            nilaiMhs[i] = sc01.nextInt();
         }
 
-        double rata2 = hitungRata2/jumlahMahasiswa;
-        double jumlahNilai = 0;
+        double rata2 = 0;
         int nilaiTertinggi = nilaiMhs[0];
-        int nilaiTerendah = nilaiMhs[0];
-    
-        System.out.println("\nNilai Mahasiswa : ");
-        for (int i=0; i<5; i++) {
-            System.out.println("Nilai mahasiswa ke-" + (i+1) + " : " + nilaiMhs[i]);
+        int nilaiTerendah = nilaiMhs[0]; 
+
+        for (int i=0; i<jumlahNilaiMahasiswa; i++) {
+            rata2 += nilaiMhs [i]; 
+            if (nilaiMhs[i] > nilaiTertinggi) {
+                nilaiTertinggi = nilaiMhs[i];
+            }
+            if (nilaiMhs[i] < nilaiTerendah) {
+                nilaiTerendah = nilaiMhs[i];
+            }
         }
 
-        System.out.println("\nNilai tertinggi : " + nilaiTertinggi);
-        System.out.println("Nilai terendah : " + nilaiTerendah);
-        System.out.println("Rata-rata nilai : " + rata2);
+        rata2 /= jumlahNilaiMahasiswa;
 
-        sc01.close();
+        System.out.println("\nNilai Mahasiswa : ");
+        for (int j=0; j<nilaiMhs.length; j++) {
+            System.out.println("Nilai mahasiswa ke-" + (j+1) + " : " + nilaiMhs[j]);
+        }
+        System.out.println();
+        System.out.println("Nilai rata-rata : " + rata2);
+        System.out.println("Nilai tertinggi : " + nilaiTertinggi);
+        System.out.println("Nilai terendah : " + nilaiTerendah);
+
     }
 }
