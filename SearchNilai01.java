@@ -5,14 +5,14 @@ public class SearchNilai01 {
 
         Scanner sc01 = new Scanner(System.in);
         
-        int[] arrNilai = new int[7];
-        int key = 0;
+        int[] arrNilai = new int[6];
+        int key = 78;
         int hasil = 0;
 
         System.out.print("Masukkan banyaknya nilai yang akan diinput : ");
         int N = sc01.nextInt();
 
-        for (int i=1; i<7; i++) {
+        for (int i=1; i<arrNilai.length; i++) {
             System.out.print("Masukkan nilai mahasiswa ke-" + i + " : ");
             arrNilai[i] = sc01.nextInt();
             if (key == arrNilai[i]) {
